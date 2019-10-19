@@ -1,0 +1,764 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+/* the sidebar is hidden (style="display:none")
+It is shown when you click on the menu icon in the top left corner.
+When it is opened, it shifts the page content to the right.
+We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%"
+  matches the width of the sidebar */
+
+/* header(top-nav) section */
+.header {
+  background-color: #c1c1c1;
+  width: 100%;
+  border: .5px solid #c1c1c1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 333;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.search-box {
+  border: none;
+  border-radius: 50px;
+  width: 13.5rem;
+  outline: none;
+  padding: .55rem .55rem;
+}
+.search-box-container{
+  background: none;
+}
+/* user dropdown */
+
+.user-menu-wrap {
+  position: relative;
+  width: 3.5rem;
+  right: 5.5rem;
+}
+
+.mini-photo-wrapper {
+  display: block;
+}
+
+.mini-photo {
+  border-radius: 50%;
+}
+
+.menu-container {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu-container.active {
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+.user-menu {
+  position: absolute;
+  right: -2.5rem;
+  background-color: #fff;
+  width: 10rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 1rem;
+  list-style-type: none;
+}
+
+.user-menu .user-menu-link {
+  display: block;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+transition: all.4s;
+ padding: .5rem 1rem;
+}
+
+.user-menu .user-menu-link:hover {
+  background-color: #4183c4;
+  color: #fff;
+}
+
+.user-menu:before {
+  position: absolute;
+  top: -16px;
+  left: 4.5rem;
+  display: inline-block;
+  content: "";
+  border: 8px solid transparent;
+  border-bottom-color: #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+.user-menu:after {
+  position: absolute;
+  top: -14px;
+  left: 4.5rem;
+  display: inline-block;
+  content: "";
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+}
+
+/* home(Dashboard) */
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18.5rem;
+  height: 7.5rem;
+  padding: 2.5rem 2.5rem;
+  border: 1px solid #083b66;
+}
+
+.box:hover {
+  opacity: .7;
+  font-size: 1.5rem;
+  transition: all.5s;
+}
+
+.iconText {
+  text-align: center;
+  font-weight: bold;
+}
+
+.number {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.fas {
+  font-size: 2rem;
+  padding: .5rem .5rem;
+  color: #083b66;
+}
+
+.fas:hover {
+  color: #000;
+}
+
+.button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20rem;
+  background-color: #fff;
+  position: fixed !important;
+  z-index: 1;
+  overflow: auto;
+}
+
+.bar-block .dropdown-hover,
+.bar-block .dropdown-click {
+  width: 100%;
+}
+
+.bar-block .dropdown-hover .dropdown-content,
+.bar-block .dropdown-click .dropdown-content {
+  min-width: 100%;
+}
+
+.bar-block .dropdown-hover .button,
+.bar-block .dropdown-click .button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+}
+
+.main,
+#main {
+  transition: margin-left .4s;
+
+}
+
+S {
+  margin: 0 auto;
+  width: 80%;
+  border: .5px dotted #c1c1c1;
+}
+
+.bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  font-size: 15px;
+
+}
+
+.bar-block .bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0
+}
+
+.bar-block.center .bar-item {
+  text-align: center
+}
+
+.page-container:after,
+.page-container:before,
+.panel:after,
+.panel:before {
+  content: "";
+  display: table;
+  clear: both
+}
+
+@media (max-width:1205px) {
+  .auto {
+    max-width: 95%
+  }
+}
+
+@media (max-width:600px) {
+  .modal-content {
+    margin: 0 10px;
+    width: auto !important
+  }
+
+  .modal {
+    padding-top: 30px
+  }
+
+
+}
+
+@media (min-width:993px) {
+  .modal-content {
+    width: 900px
+  }
+
+  .hide-large {
+    display: none !important
+  }
+
+  .sidebar.collapse {
+    display: block !important
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .hide-medium {
+    display: none !important
+  }
+}
+
+@media (max-width:992px) {
+  .sidebar.collapse {
+    display: none
+  }
+
+  .main {
+    margin-left: 0 !important;
+    margin-right: 0 !important
+  }
+
+  .auto {
+    max-width: 100%
+  }
+}
+
+.page-container {
+  padding: 0.01em 16px;
+  background: #083b66;
+  color: #fff;
+}
+
+.xlarge {
+  font-size: 24px !important
+}
+
+.button:hover {
+  color: #000 !important;
+  background-color: #ccc !important
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+.select {
+  width: 300px;
+  border-radius: 7px;
+  border: 1px solid #fff;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 300px;
+  margin: 0;
+  position: relative;
+  height: auto;
+  max-height: calc(40px * 8);
+  /* max 8 element in list */
+  transition: 0.2s;
+}
+
+.select:before {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: rotate(45deg);
+  top: 15px;
+  right: 15px;
+}
+
+.select:after {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: rotate(45deg);
+  top: 20px;
+  right: 15px;
+}
+
+.collapsed {
+  max-height: 40px;
+  transition: 0.2s;
+}
+
+.collapsed:before {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: rotate(45deg);
+  top: 10px;
+  right: 15px;
+}
+
+.collapsed:after {
+  content: '';
+  position: absolute;
+  background-color: #083b66;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: rotate(45deg);
+  top: 5px;
+  right: 15px;
+}
+
+.option,
+.shown {
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 15px;
+  cursor: pointer;
+  background-color: #c1c1c1;
+}
+
+.fa {
+  color: #fff;
+}
+
+.fa:hover {
+  color: #000;
+  transition: all.4s;
+}
+
+.option a {
+  text-decoration: none;
+  color: #000;
+}
+
+.option a:hover {
+  color: #083b66;
+  font-weight: bold;
+}
+
+.shown {
+  background-color: #083b66;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+
+
+/* calendar */
+
+
+
+
+
+/* notice board */
+.corners {
+  background: #FFF;
+  height: 25rem;
+  margin: 50px auto;
+  max-width: 25rem;
+  line-height: 25px;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 1rem;
+  padding-top: 5rem;
+  box-shadow: 0 1px 7px hsla(0, 0%, 0%, .2);
+  border: .5px solid #000;
+}
+
+/* Corner Effect */
+.corners:after,
+.corners:before {
+  background: #e6e6e6;
+  content: '';
+  height: 50px;
+  position: absolute;
+  top: 2rem;
+  width: 100px;
+  -webkit-box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, .5);
+  -moz-box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, .5);
+  box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, .5);
+}
+
+.corners:after {
+  left: -50px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.corners:before {
+  right: -50px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.message-board {
+  text-align: center;
+
+}
+
+#dash-students {
+  display: none;
+}
+
+#dash-parents {
+  display: none;
+}
+
+#student-add {
+  display: none;
+  color: #000;
+}
+
+#dash-student-page {
+  display: none;
+}
+#all-parents{
+  display: none;
+}
+#all-teachers{
+  display: none;
+}
+
+#all-books{
+  display: none;
+}
+
+/* all students list */
+
+table {
+  border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+th {
+  text-align: left;
+}
+
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #083b66;
+}
+
+td,
+th {
+  padding: 1em .5em;
+  vertical-align: middle;
+}
+
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  background: #fff;
+}
+
+tr:hover{
+  opacity: .7;
+  background: #c1c1c1;
+  color: #000;
+}
+
+a {
+  color: #73685d;
+}
+
+@media all and (max-width: 768px) {
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th {
+    text-align: right;
+  }
+
+  table {
+    position: relative;
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  thead {
+    float: left;
+    white-space: nowrap;
+  }
+
+  tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  tr {
+    display: inline-block;
+    vertical-align: top;
+
+  }
+  tr:hover{
+    background: #c1c1c1;
+    color: #000;
+  }
+  th {
+    border-bottom: 1px solid #a39485;
+  }
+
+  td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+
+}
+
+/* admit student : Student Page */
+.admit-main>div {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.two .register {
+  border: none;
+}
+
+.two .register h3 {
+  border-bottom-color: #909090;
+}
+
+.two .register .sep {
+  border-color: #909090;
+}
+
+.register {
+  width: 40rem;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background-color: #c1c1c134;
+
+}
+
+.register h3 {
+  margin: 0 15px 20px;
+  border-bottom: 2px solid #083b66;
+  padding: 5px 10px 5px 0;
+  font-size: 1.1em;
+}
+
+.register div {
+  margin: 0 0 15px 0;
+  border: none;
+}
+
+.register label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  margin: 10px;
+}
+
+.register input[type=text],
+.register input[type=tel] {
+  width: 65%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  padding: 5px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.register input[type=text]:focus,
+.register input[type=tel]:focus {
+  background: #FFFFFF;
+}
+
+.register .button {
+  font-size: 1em;
+  color: #FFF;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #083b66;
+  background: #083b66;
+  background: linear-gradient(#3072a8, #083b66);
+}
+
+.register .button:hover {
+  background: #51DB1C;
+  background: linear-gradient(#083b66, #3072a8);
+}
+
+.register .sep {
+  border: 1px solid #72B372;
+  position: relative;
+  margin: 35px 20px;
+}
+
+.register .or {
+  position: absolute;
+  width: 50px;
+  left: 50%;
+  background: #F0F0F0;
+  text-align: center;
+  margin: -10px 0 0 -25px;
+  line-height: 20px;
+}
+
+.register .connect {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.user-img{
+  border-radius: 100px;
+  border: .5px solid #777;
+  width: 2.5rem;
+}
+.user-img:hover{
+  transition: all.4s;
+  border: 2.5px solid #444;
+  box-shadow: 5px 10px #88888877;
+}
+
