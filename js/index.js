@@ -231,13 +231,108 @@ document.getElementById('all-books-link').addEventListener('click', function (e)
 })
 
 
-// logout
+//dashboard logout
 document.getElementById("logout").addEventListener('click', function(e) {
 e.preventDefault()
 
-window.location.href = "/FORMPRO/login.html"
+window.location.href = "/loginregister/loginregister/index.html"
 })
 
 
 
-//calendar
+
+
+//local storage : students
+
+
+var students = []
+
+var Student = {
+  FirstName : " ",
+  LastName : "",
+  Phone : "",
+  Email : "",
+  DOB : " ",
+  Gender :" ",
+  Grade : " ",
+  Address : " "
+};
+
+
+12
+
+// You want to hold all your students in an array like this:
+
+var students = [];
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+students.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+
+
+
+// And then store that in localStorage:
+
+localStorage.setItem('Students', JSON.stringify(students));
+
+
+// The best way to do that would be with a function like this:
+
+// When you get more student information, you should:
+
+var addNewStudent = function (FirstName, LastName, Phone, email, DOB, grade, age) {
+
+    // retrieve it (Or create a blank array if there isn't any info saved yet),
+    var students = JSON.parse(localStorage.getItem('Students')) || [];
+    // add to it,
+    students.push({name: FirstName, surname: LastName, Phone: Phone, email: email, DOB: DOB, Grade: grade, Age: age});
+    // then put it back.
+    localStorage.setItem('Students', JSON.stringify(students));
+}
+
+var parents = [];
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+parents.push({FirstName:"a",LastName:"b",Phone:"10111",email:"student@gmail.com",DOB:"02/12/1998",grade:"9",age:13});
+
+// And then store that in localStorage:
+
+localStorage.setItem('Parents', JSON.stringify(parents));
+
+
+// The best way to do that would be with a function like this:
+
+// When you get more student information, you should:
+
+var addNewParents = function (FirstName, LastName, Phone, email, DOB, Occupation, Address) {
+
+    // retrieve it (Or create a blank array if there isn't any info saved yet),
+    var parents = JSON.parse(localStorage.getItem('Parents')) || [];
+    // add to it,
+    parents.push({name: FirstName, surname: LastName, Phone: Phone, email: email, DOB: DOB, occupation: Occupation, address: Address});
+    // then put it back.
+    localStorage.setItem('Parents', JSON.stringify(parents));
+}

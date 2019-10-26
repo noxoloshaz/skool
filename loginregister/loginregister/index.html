@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>EDU-AFRIKA_FORM</title>
+</head>
+<body>
+	<div class="align">	<a href="#" style="color:#fff">
+		<h1>EDU-AFRIKA</h1> <br>
+		
+		</a> <br>
+		
+	
+	
+		<div class="card">
+			
+			<div class="head">
+				<div></div>
+				<a id="login"  href="#login">Login</a>
+				<div>	<a href="#">		<img src="img/logo.png"  class="logo" alt="logo">
+				</a></div>
+				<a id="register" href="#register">Register</a>
+				
+			</div>
+			
+			<div class="tabs">
+				<form id="login-form">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="email" id="email" type="email">
+							<img src="img/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Password" id="password" type="password">
+							<img src="img/pass.svg">
+						</div>
+						<label class="checkbox">
+							<input type="checkbox">
+							<span>Remember me</span>
+						</label>
+					</div>
+					<button id="login">Login</button>
+				</form>
+				<form id="register-form">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="Email" id="reg-email" type="text">
+							<img src="img/mail.svg">
+						</div>
+						<div class="input">
+							<input placeholder="firstname" id="first-name" type="text">
+							<img src="img/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="lastname" id="last-name" type="text">
+							<img src="img/user.svg">
+						</div>
+
+						<div class="input">
+							<input placeholder="Password" id="reg-password" type="password">
+							<img src="img/pass.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Username" id="cpassword" type="text">
+							<img src="img/user.svg">
+						</div>
+						<div class="input" id="user-select-container">
+							<select name="user-select" id="users">
+								<option value="admin">Admin</option>
+								<option value="teacher">Teacher</option>
+								<option value="parent">Parent</option>
+							</select>
+						</div>
+					</div>
+					<button id="register">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/index.js"></script>
+</body>
+</html>

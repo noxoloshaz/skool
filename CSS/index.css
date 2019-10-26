@@ -34,11 +34,53 @@ We use JavaScript to add a 25% left margin to the div element with id="main" whe
   position: sticky;
   top: 0;
 }
-
+@media screen and (max-width: 600px){
+  .header {
+    background-color: #c1c1c1;
+    padding: 0;
+    margin: 0;
+  }
+  .bold{
+    display: none;
+  }
+  .header-title{
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+  }
+  .linked{
+    color: black;
+    text-decoration: none;
+    letter-spacing: 1px; 
+  }
+  .logo{
+    padding: 0;
+    margin: 0;
+    width: 6rem;
+  }
+  .search-box {
+    border: none;
+    border-radius: 50px;
+    width: 13.5rem;
+    outline: none;
+    padding: .55rem .55rem;
+  }
+}
+.logo{
+  
+  width: 8rem;
+}
+.linked{
+  color: black;
+  text-decoration: none;
+  letter-spacing: 1px;
+   
+}
 .search-box {
   border: none;
   border-radius: 50px;
-  width: 13.5rem;
+  width: 8.5rem;
   outline: none;
   padding: .55rem .55rem;
 }
@@ -386,7 +428,7 @@ S {
   background-color: #ffffff;
   width: 14px;
   height: 14px;
-  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 15px;
   right: 15px;
 }
@@ -397,7 +439,7 @@ S {
   background-color: #000;
   width: 14px;
   height: 14px;
-  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 20px;
   right: 15px;
 }
@@ -413,7 +455,7 @@ S {
   background-color: #ffffff;
   width: 14px;
   height: 14px;
-  -webkit-transform: rotate(45deg);
+ transform: rotate(45deg);
   top: 10px;
   right: 15px;
 }
@@ -424,7 +466,7 @@ S {
   background-color: #083b66;
   width: 14px;
   height: 14px;
-  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 5px;
   right: 15px;
 }
